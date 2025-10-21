@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { saveBooking } from '../services/bookingService';
 import './confirmation.css';
 
 const Confirmation = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const bookingData = location.state || {};
+    const hasSaved = useRef(false);
+
+    useEffect(() => {
+        // Speichere die Buchung nur einmal im LocalStorage
+        if (bookingData && bookingData.name && bookingData.day && !hasSaved.current) {
+            try {
+                saveBooking(bookingData);
+                hasSaved.current = true;
+                // Trigger Event für andere Komponenten
+                window.dispatchEvent(new Event('bookingsUpdated'));
+            } catch (error) {
+                console.error('Fehler beim Speichern der Buchung:', error);
+            }
+        }
+    }, [bookingData]);
 
     const backHome = () => navigate('/');
 

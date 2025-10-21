@@ -22,6 +22,38 @@
   padding: 0 1rem;
 }
 
+.header-with-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.my-bookings-button {
+  background: #1a1a1a;
+  color: #ffffff;
+  border: 2px solid #4caf50;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.my-bookings-button:hover {
+  background: #4caf50;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+}
+
+.my-bookings-button:active {
+  transform: translateY(0);
+}
+
 .day-overview-container {
   display: flex;
   flex-direction: column;
@@ -42,6 +74,13 @@
   .app h1 {
     font-size: 2.5rem;
     margin-bottom: 30px;
+  }
+  
+  .header-with-button {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
   }
   
   .day-overview-container {
