@@ -1,0 +1,151 @@
+.simple-page {
+    min-height: 100vh;
+    background-color: #2d2d2d;
+    padding: 20px;
+}
+
+.simple-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.simple-page-container h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin: 20px 0 30px;
+    text-align: center;
+}
+
+.simple-page .back-button {
+    background: #1a1a1a;
+    color: #ffffff;
+    border: 2px solid #4caf50;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.simple-page .back-button:hover {
+    background: #4caf50;
+    transform: translateX(-5px);
+}
+
+/* Easter Egg Styles */
+.easter-egg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+    animation: slideIn 0.5s ease, pulse 2s infinite;
+    box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.easter-egg h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    animation: rainbow 3s infinite;
+}
+
+@keyframes rainbow {
+    0% { color: #ff0000; }
+    16% { color: #ff8800; }
+    33% { color: #ffff00; }
+    50% { color: #00ff00; }
+    66% { color: #0088ff; }
+    83% { color: #8800ff; }
+    100% { color: #ff0000; }
+}
+
+.easter-egg p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.easter-egg-animation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    font-size: 3rem;
+}
+
+.easter-egg-animation .egg {
+    animation: bounce 1s infinite;
+}
+
+.easter-egg-animation .egg:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.easter-egg-animation .egg:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.easter-egg-animation .egg:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.easter-egg .hint {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .simple-page-container {
+        padding: 20px;
+    }
+
+    .simple-page-container h1 {
+        font-size: 2rem;
+    }
+
+    .easter-egg h2 {
+        font-size: 1.5rem;
+    }
+
+    .easter-egg-animation {
+        font-size: 2rem;
+        gap: 10px;
+    }
+}

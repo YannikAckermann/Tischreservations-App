@@ -1,0 +1,225 @@
+.terms-page {
+    text-align: left;
+}
+
+.terms-intro {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.terms-content {
+    color: #cccccc;
+    line-height: 1.8;
+}
+
+.terms-content section {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: #252525;
+    border-radius: 8px;
+    border-left: 4px solid #4caf50;
+}
+
+.terms-content h2 {
+    color: #4caf50;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.terms-content p {
+    margin-bottom: 15px;
+}
+
+.terms-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.terms-content ul li {
+    padding: 8px 0 8px 30px;
+    position: relative;
+}
+
+.terms-content ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.terms-content code {
+    background: #1a1a1a;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #4caf50;
+    font-family: 'Courier New', monospace;
+}
+
+.terms-footer {
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    border: none;
+    text-align: center;
+    padding: 30px;
+}
+
+.terms-footer p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.signature {
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+/* Easter Egg Styles */
+.easter-egg-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.easter-egg-content {
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(76, 175, 80, 0.5);
+    animation: bounceIn 0.6s ease;
+}
+
+.easter-egg-content h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    animation: pulse 1s infinite;
+}
+
+.easter-egg-content p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+
+.secret-message {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.secret-message strong {
+    color: #ffd700;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.fun-fact {
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.close-easter-egg {
+    background: #ffffff;
+    color: #4caf50;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.close-easter-egg:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Konfetti Animation */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    z-index: 9998;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .terms-content section {
+        padding: 15px;
+    }
+
+    .terms-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .terms-content ul li {
+        padding-left: 25px;
+    }
+
+    .easter-egg-content {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .easter-egg-content h2 {
+        font-size: 1.5rem;
+    }
+}
